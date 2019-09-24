@@ -1,11 +1,11 @@
-input_word = input('Message: ').replace(' ','')
-ints = 0
-strs = 0
-for letter in input_word:
-    try:
-        int(letter)
-        ints += 1
-    except ValueError:
-        strs += 1
-print(f'letters = {strs}')
-print(f'numbers = {ints}')
+s = input("Input a string")
+d=l=0
+for c in s:
+	if c.isdigit():
+		d=d+1
+	elif c.isalpha():
+		l=l+1
+	else:
+		pass
+print("Letters", l)
+print("Digits", d)
