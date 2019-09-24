@@ -1,0 +1,6 @@
+input_word = input("Input string here:  ")
+try:
+    output = int(input_word)
+    print('This is intager')
+except ValueError:
+    print('This is string')
