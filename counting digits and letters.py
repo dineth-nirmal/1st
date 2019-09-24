@@ -1,11 +1,14 @@
-s = input("Input a string")
-d=l=0
-for c in s:
-	if c.isdigit():
-		d=d+1
-	elif c.isalpha():
-		l=l+1
-	else:
-		pass
-print("Letters", l)
-print("Digits", d)
+def counter(d, l, s):
+	for item in word:
+		if item.isalpha():
+			l += 1
+		elif item.isdigit():
+			d += 1
+		elif item.isspace():
+			s += 1
+	return l, d, s
+
+
+word = input('Word: ')                                              #fixed
+out = counter(0, 0, 0)
+print(f'letters: {out[0]}\ndigits: {out[1]}\nspaces: {out[2]}')
