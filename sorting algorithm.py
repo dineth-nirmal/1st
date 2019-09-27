@@ -1,3 +1,11 @@
+def making_list(no_items):
+	n_list = []
+	for i in range(no_items):
+		item = int(input('Number: '))				# this input should be int
+		n_list.append(item)
+	return n_list
+
+
 def sorting(n):
 	for j in range(len(n) - 1):
 		for i in range(len(n) - 1):
@@ -8,5 +16,6 @@ def sorting(n):
 	return n
 
 
-n = [7, 4, 2]
+number_of_items = int(input('how many items you want to store: '))
+n = making_list(number_of_items)
 print(sorting(n))
