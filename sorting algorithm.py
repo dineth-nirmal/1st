@@ -1,21 +1,29 @@
-def making_list(no_items):
-	n_list = []
-	for i in range(no_items):
-		item = int(input('Number: '))				# this input should be int
-		n_list.append(item)
-	return n_list
+def list_maker():    
+    while True:
+        try:
+            list_len = int(input('list length: '))
+            list_1 = []
+            counter = 0
+            while counter < list_len:
+                try:
+                    item_input = int(input(f'Number ({counter + 1}): '))
+                    list_1.append(item_input)
+                    counter += 1
+                except ValueError:
+                    print('invalid value')
+            return list_1
+        except ValueError:
+            print('list length should be a numerical value. try again.')
 
 
-def sorting(n):
-	for j in range(len(n) - 1):
-		for i in range(len(n) - 1):
-			if n[i] <= n[i + 1]:
-				pass
-			else:
-				n[i], n[i + 1] = n[i + 1], n[i]
-	return n
+def sorting(list_1):
+    for j in range(len(list_1) - 1):
+        for i in range(len(list_1) - 1):
+            if list_1[i] < list_1[i + 1]:
+                pass
+            else:
+                list_1[i], list_1[i + 1] = list_1[i + 1], list_1[i]
+    return list_1
 
 
-number_of_items = int(input('how many items you want to store: '))
-n = making_list(number_of_items)
-print(sorting(n))
+print(sorting(list_maker()))
